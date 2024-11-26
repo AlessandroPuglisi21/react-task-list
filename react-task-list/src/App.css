@@ -27,3 +27,7 @@ p {
     padding: 20px;
     color: brown;
 }
+
+.taskTitle {
+    color: rgb(13, 206, 29);
+}

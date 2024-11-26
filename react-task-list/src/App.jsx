@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const tasks = [
     {
       id: 1,
@@ -83,8 +81,26 @@ function App() {
   );
 
   const completedTasks = tasks.filter(
-    (task) => task.state === 'completed'
+    (task) => task.state === "completed"
   );
+
+  function counter(tasks) {
+    let counterTodo = 0;
+    let counterDone = 0;
+
+    tasks.forEach((task) => {
+      if (task.state === "completed") {
+        counterDone++;
+      } else {
+        counterTodo++;
+      }
+    });
+
+    return { counterTodo, counterDone };
+  }
+
+  // Ottieni i conteggi dei task
+  const { counterTodo, counterDone } = counter(tasks);
 
   return (
     <>
@@ -95,11 +111,11 @@ function App() {
 
       {/* CURRENT TASK */}
       <div>
-        <h2 className="taskStatus"> CURRENT TASKS (4)</h2>
+        <h2 className="taskStatus">CURRENT TASKS ({counterTodo})</h2>
         <ul>
           {tasksTodo.map((task) => (
             <li key={task.id} className="task">
-              <h2>{task.title}</h2>
+              <h2 className="taskTitle">{task.title}</h2>
               <p>Priority: {task.priority}</p>
               <p>Est.time: {task.estimatedTime}</p>
             </li>
@@ -110,11 +126,11 @@ function App() {
 
       {/* COMPLETED TASKS */}
       <div>
-        <h2 className="taskStatus"> COMPLETED TASKS (6)</h2>
+        <h2 className="taskStatus">COMPLETED TASKS ({counterDone})</h2>
         <ul>
           {completedTasks.map((task) => (
             <li key={task.id} className="task">
-              <h2>{task.title}</h2>
+              <h2 className="taskTitle">{task.title}</h2>
               <p>Priority: {task.priority}</p>
               <p>Est.time: {task.estimatedTime}</p>
             </li>
