@@ -31,3 +31,12 @@ p {
 .taskTitle {
     color: rgb(13, 206, 29);
 }
+.progressButton{
+  background-color: chocolate;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: aliceblue;
+  margin-left: 16px;
+  border-width: 1px;
+}

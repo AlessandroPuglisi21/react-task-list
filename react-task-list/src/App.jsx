@@ -115,7 +115,7 @@ function App() {
         <ul>
           {tasksTodo.map((task) => (
             <li key={task.id} className="task">
-              <h2 className="taskTitle">{task.title}</h2>
+              <h2 className="taskTitle">{task.title} <button className="progressButton">{task.state}</button></h2>
               <p>Priority: {task.priority}</p>
               <p>Est.time: {task.estimatedTime}</p>
             </li>
@@ -130,7 +130,7 @@ function App() {
         <ul>
           {completedTasks.map((task) => (
             <li key={task.id} className="task">
-              <h2 className="taskTitle">{task.title}</h2>
+              <h2 className="taskTitle">{task.title}<button className="progressButton">{task.state}</button></h2>
               <p>Priority: {task.priority}</p>
               <p>Est.time: {task.estimatedTime}</p>
             </li>
