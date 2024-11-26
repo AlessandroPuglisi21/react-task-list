@@ -14,3 +14,16 @@
     margin: 0; 
   }
   
+.task{
+    padding: 20px;
+    line-height: 30px;
+}
+p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.taskStatus{
+    padding: 20px;
+    color: brown;
+}
